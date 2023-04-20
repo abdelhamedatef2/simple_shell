@@ -53,7 +53,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 ssize_t get_input(info_t *info)
 {
 	static char *buf;
-	static size_t i = 0, len = 0;
+	static size_t i, len;
 	ssize_t bytes_read = 0;
 	char **buf_p = &(info->arg);
 
@@ -83,17 +83,18 @@ ssize_t get_input(info_t *info)
 		}
 
 		*buf_p = p;
-		return strlen(p);
+		return (strlen(p));
 	}
 
 	*buf_p = buf;
-	return bytes_read;
+	return (bytes_read);
 }
 /**
  * read_buf - read data from a file descriptor into a buffer.
  * @info: pointer to a struct containing information about the file descriptor.
  * @buf: pointer to a buffer to hold the data read from the file descriptor.
- * @i: pointer to a size_t variable that will be set to the number of bytes read.
+ * @i: pointer to a size_t variable
+ * that will be set to the number of bytes read.
  *
  * Return: the number of bytes read on success, or -1 on error.
  */
@@ -125,7 +126,7 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 int _getline(info_t *info, char **ptr, size_t *length)
 {
 	static char buf[READ_BUF_SIZE];
-	static size_t i = 0, len = 0;
+	static size_t i, len;
 	ssize_t num_bytes_read = 0;
 	size_t k = 0;
 	char *p = NULL, *new_p = NULL, *c = NULL;
