@@ -54,17 +54,19 @@ int _atoi(char *str)
 	unsigned int result = 0;
 
 	/* Check for a negative sign */
-	if (*str == '-') {
+	if (*str == '-')
+	{
 		sign = -1;
 		str++;
 	}
 
 	/* Parse digits until a non-digit character is found */
-	while (*str >= '0' && *str <= '9') {
+	while (*str >= '0' && *str <= '9')
+	{
 		result = result * 10 + (*str - '0');
 		str++;
 	}
 
 	/* Apply sign to result and return */
-	return sign * (int)result;
+	return (sign * (int)result);
 }
