@@ -56,8 +56,9 @@ char *dup_chars(char *pathstr, int start, int stop)
  * @pathstr: a colon-separated list of directories to search
  * @cmd: the command to search for
  *
- * Return: a pointer to a string containing the full path to the command if found,
- *         or NULL if the command was not found or if pathstr is NULL.
+ * Return: a pointer to a string containing the
+ * fullpath to the command if found
+ * or NULL if the command was not found or if pathstr is NULL.
  */
 char *find_path(info_t *info, char *pathstr, char *cmd)
 {
@@ -72,17 +73,19 @@ char *find_path(info_t *info, char *pathstr, char *cmd)
 	while (*pathstr)
 	{
 		char *end = pathstr;
+
 		while (*end && *end != ':')
 			end++;
 
 		int path_len = end - pathstr;
+
 		path = malloc(path_len + strlen(cmd) + 2);
 		if (!path)
 			return (NULL);
 
 		strncpy(path, pathstr, path_len);
 		path[path_len] = '/';
-		strcpy(&path[path_len+1], cmd);
+		strcpy(&path[path_len + 1], cmd);
 
 		if (is_cmd(info, path))
 			return (path);
