@@ -121,13 +121,13 @@ char *convert_number(long int num, int base, int flags)
 	char sign = 0;
 	char *ptr;
 	unsigned long n = (num < 0 && !(flags & CONVERT_UNSIGNED)) ? -num : num;
-	const char *array = (flags & CONVERT_LOWERCASE) ? "0123456789abcdef" : "0123456789ABCDEF";
+	const char *array = (flags & CONVERT_LOWERCASE) ?
+		"0123456789abcdef" : "0123456789ABCDEF";
 
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	do
-	{
+	do {
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
