@@ -10,7 +10,7 @@
 
 char *_strcpy(char *dest, const char *src)
 {
-	if (dest == src || src == NULL){
+	if (dest == src || src == NULL)
 		return (dest);
 
 	int i = 0;
