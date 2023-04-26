@@ -1,72 +1,75 @@
 #include "shell.h"
 
 /**
- * interactive - Determines if the shell is in interactive mode
- * @info: Pointer to info_t struct
+ * is_interactive_mode - checks if shell is in interactive mode
+ * @info: a pointer to a struct containing shell information
  *
- * Return: 1 if interactive mode, 0 otherwise
+ * Return: 1 if shell is in interactive mode, 0 otherwise
  */
-int interactive(info_t *info)
+int is_interactive_mode(info_t *info)
 {
-	if (isatty(STDIN_FILENO) && info->readfd <= 2)
-		return (1);
-	else
-		return (0);
+	return (isatty(STDIN_FILENO) && info->readfd <= STDERR_FILENO);
 }
+
 /**
- * is_delim - Checks if a character is a delimiter
- * @c: Character to check
- * @delim: Delimiter string
+ * is_delimiter - checks if a character is a delimiter
+ * @c: the character to check
+ * @delimiters: a string containing delimiter characters
  *
- * Return: 1 if character is a delimiter, 0 otherwise
+ * Return: 1 if c is a delimiter, 0 otherwise
  */
-int is_delim(char c, char *delim)
+int is_delimiter(char c, char *delimiters)
 {
-	while (*delim)
-	{
-		if (*delim++ == c)
+	while (*delimiters)
+		if (*delimiters++ == c)
 			return (1);
-	}
 	return (0);
 }
+
 /**
- * _isalpha - Checks if a character is an alphabetic character
- * @c: Character to check
+ * is_alphabetic - checks if a character is alphabetic
+ * @c: the character to check
  *
- * Return: 1 if character is an alphabetic character, 0 otherwise
+ * Return: 1 if c is alphabetic, 0 otherwise
  */
-int _isalpha(int c)
+int is_alphabetic(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
 	else
 		return (0);
 }
+
 /**
- * _atoi - Converts a string to an integer
- * @str: String to convert
+ * string_to_integer - converts a string to an integer
+ * @str: the string to convert
  *
- * Return: Integer representation of the string, or 0 if no numbers in string
+ * Return: the converted integer, or 0 if no numbers found in string
  */
-int _atoi(char *str)
+int string_to_integer(char *str)
 {
-	int sign = 1;
+	int i, sign = 1, state = 0, output;
 	unsigned int result = 0;
 
-	/* Check for a negative sign */
-	if (*str == '-')
+	for (i = 0; str[i] != '\0' && state != 2; i++)
 	{
-		sign = -1;
-		str++;
+		if (str[i] == '-')
+			sign *= -1;
+
+		if (str[i] >= '0' && str[i] <= '9')
+		{
+			state = 1;
+			result *= 10;
+			result += (str[i] - '0');
+		}
+		else if (state == 1)
+			state = 2;
 	}
 
-	/* Parse digits until a non-digit character is found */
-	while (*str >= '0' && *str <= '9')
-	{
-		result = result * 10 + (*str - '0');
-		str++;
-	}
+	if (sign == -1)
+		output = -result;
+	else
+		output = result;
 
-	/* Apply sign to result and return */
-	return (sign * (int)result);
+	return (output);
 }
