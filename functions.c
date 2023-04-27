@@ -14,7 +14,6 @@ while (s[i])
 return (i);
 }
 
-
 /**
  * *_strcpy -  copies the string pointed to by src
  * @dest: char type string
