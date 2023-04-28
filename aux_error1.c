@@ -9,7 +9,8 @@
  * @line_count: counter lines
  * Return: error message
  */
-char *concat_err_cd(data_shell *data, char *msg, char *err_msg, char *line_count)
+char *concat_err_cd(data_shell *data, char *msg
+		, char *err_msg, char *line_count)
 {
 	char *illegal_flag;
 
