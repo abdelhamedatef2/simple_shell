@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _strlen - find the length of a string
  * @s: pointer to the string to check
@@ -7,11 +8,11 @@
 
 int _strlen(const char *s)
 {
-int i = 0;
-while (s[i])
-	i++;
+	int i = 0;
 
-return (i);
+	while (s[i])
+		i++;
+	return (i);
 }
 
 
