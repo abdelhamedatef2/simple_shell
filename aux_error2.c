@@ -2,7 +2,7 @@
 
 /**
  * error_env - how error msg in get_env.
- * @datash: data relevant to 
+ * @datash: data relevant to
  * (counter, arguments)
  * Return: message with error.
  */
