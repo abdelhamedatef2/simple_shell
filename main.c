@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * free_data - frees data structure
+ * free_data - data struct freer
  *
- * @datash: data structure
- * Return: no return
+ * @datash: data struct
+ * Return: void
  */
 void free_data(data_shell *datash)
 {
@@ -20,11 +20,11 @@ void free_data(data_shell *datash)
 }
 
 /**
- * set_data - Initialize data structure
+ * set_data - Initialz data struct
  *
- * @datash: data structure
- * @av: argument vector
- * Return: no return
+ * @datash: data struct
+ * @av: arg vec
+ * Return: void
  */
 void set_data(data_shell *datash, char **av)
 {
@@ -53,8 +53,8 @@ void set_data(data_shell *datash, char **av)
 /**
  * main - Entry point
  *
- * @ac: argument count
- * @av: argument vector
+ * @ac: arg counter
+ * @av: arg vec
  *
  * Return: 0 on success.
  */

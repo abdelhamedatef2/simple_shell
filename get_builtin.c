@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * get_builtin - builtin that pais the command in the arg
+ * get_builtin - builtin that pais the cmd in arg
  * @cmd: command
- * Return: function pointer of the builtin command
+ * Return: ptr of builtin cmd
  */
 int (*get_builtin(char *cmd))(data_shell *)
 {

@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _strdup - duplicates a str in the heap memory.
- * @s: Type char pointer str
- * Return: duplicated str
+ * _strdup - duplicates str inheap.
+ * @s: ptr char str
+ * Return: duplica str
  */
 char *_strdup(const char *s)
 {
@@ -19,8 +19,8 @@ char *_strdup(const char *s)
 }
 
 /**
- * _strlen - Returns the lenght of a string.
- * @s: Type char pointer
+ * _strlen - lenrgth of str
+ * @s: char ptr
  * Return: Always 0.
  */
 int _strlen(const char *s)
@@ -34,11 +34,11 @@ int _strlen(const char *s)
 }
 
 /**
- * cmp_chars - compare chars of strings
- * @str: input string.
+ * cmp_chars - compare str to char
+ * @str: str
  * @delim: delimiter.
  *
- * Return: 1 if are equals, 0 if not.
+ * Return: 1 if are equals, 0 otherwise
  */
 int cmp_chars(char str[], const char *delim)
 {
@@ -61,11 +61,11 @@ int cmp_chars(char str[], const char *delim)
 }
 
 /**
- * _strtok - splits a string by some delimiter.
- * @str: input string.
+ * _strtok - split str by delim
+ * @str: string.
  * @delim: delimiter.
  *
- * Return: string splited.
+ * Return: spilted atr
  */
 char *_strtok(char str[], const char *delim)
 {
@@ -77,21 +77,19 @@ char *_strtok(char str[], const char *delim)
 	{
 		if (cmp_chars(str, delim))
 			return (NULL);
-		splitted = str; /*Store first address*/
+		splitted = str;
 		i = _strlen(str);
-		str_end = &str[i]; /*Store last address*/
+		str_end = &str[i];
 	}
 	str_start = splitted;
-	if (str_start == str_end) /*Reaching the end*/
+	if (str_start == str_end)
 		return (NULL);
 
 	for (bool = 0; *splitted; splitted++)
 	{
-		/*Breaking loop finding the next token*/
 		if (splitted != str_start)
 			if (*splitted && *(splitted - 1) == '\0')
 				break;
-		/*Replacing delimiter for null char*/
 		for (i = 0; delim[i]; i++)
 		{
 			if (*splitted == delim[i])
@@ -102,19 +100,19 @@ char *_strtok(char str[], const char *delim)
 				break;
 			}
 		}
-		if (bool == 0 && *splitted) /*Str != Delim*/
+		if (bool == 0 && *splitted)
 			bool = 1;
 	}
-	if (bool == 0) /*Str == Delim*/
+	if (bool == 0)
 		return (NULL);
 	return (str_start);
 }
 
 /**
- * _isdigit - defines if string passed is a number
+ * _isdigit - defines str passed a num
  *
- * @s: input string
- * Return: 1 if string is a number. 0 in other case.
+ * @s: str
+ * Return: 1 if str num. 0 otherwise
  */
 int _isdigit(const char *s)
 {

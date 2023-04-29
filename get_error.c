@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * get_error - calls the error according the builtin, syntax or permission
- * @datash: data structure that contains arguments
- * @eval: error value
+ * get_error - calls error according to permission or syntax
+ * @datash: data struct contains arg
+ * @eval: value of error
  * Return: error
  */
 int get_error(data_shell *datash, int eval)

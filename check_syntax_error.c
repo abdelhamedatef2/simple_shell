@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * repeated_char - counts the repetitions of a char
+ * repeated_char - repetitions of char counter
  *
- * @input: input string
- * @i: index
- * Return: repetitions
+ * @input: str
+ * @i: inx
+ * Return: repetition
  */
 int repeated_char(char *input, int i)
 {
@@ -16,13 +16,12 @@ int repeated_char(char *input, int i)
 }
 
 /**
- * error_sep_op - finds syntax errors
+ * error_sep_op - syntax error finder
  *
- * @input: input string
- * @i: index
- * @last: last char read
- * Return: index of error. 0 when there are no
- * errors
+ * @input: str
+ * @i: indx
+ * @last: read last char
+ * Return: index of error. 0 when sucees
  */
 int error_sep_op(char *input, int i, char last)
 {
@@ -69,11 +68,11 @@ int error_sep_op(char *input, int i, char last)
 }
 
 /**
- * first_char - finds index of the first char
+ * first_char - finds indx of 1 char
  *
- * @input: input string
- * @i: index
- * Return: 1 if there is an error. 0 in other case.
+ * @input: str
+ * @i: indx
+ * Return: 1 if error. 0 iotherswise
  */
 int first_char(char *input, int *i)
 {
@@ -93,13 +92,13 @@ int first_char(char *input, int *i)
 }
 
 /**
- * print_syntax_error - prints when a syntax error is found
+ * print_syntax_error - prints syntax error if found
  *
- * @datash: data structure
- * @input: input string
- * @i: index of the error
- * @bool: to control msg error
- * Return: no return
+ * @datash: data struct
+ * @input: str
+ * @i: indx of error
+ * @bool: control msg error
+ * Return: void
  */
 void print_syntax_error(data_shell *datash, char *input, int i, int bool)
 {
@@ -146,12 +145,11 @@ void print_syntax_error(data_shell *datash, char *input, int i, int bool)
 }
 
 /**
- * check_syntax_error - intermediate function to
- * find and print a syntax error
+ * check_syntax_error - find and print a syntax error
  *
- * @datash: data structure
- * @input: input string
- * Return: 1 if there is an error. 0 in other case
+ * @datash: data struct
+ * @input: str
+ * Return: 1 in error. 0 otherwise
  */
 int check_syntax_error(data_shell *datash, char *input)
 {
