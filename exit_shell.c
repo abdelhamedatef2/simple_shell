@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * exit_shell - exit shell
+ * exit_shell - exits the shell
  *
- * @datash: data relev
+ * @datash: data relevant (status and args)
  * Return: 0 on success.
  */
 int exit_shell(data_shell *datash)

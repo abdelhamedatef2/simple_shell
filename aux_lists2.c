@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * add_rvar_node - variables to be added to the end
+ * add_rvar_node - variables to be added to the end 
  * of a r_var
  * @head: linked llist head
  * @lvar: variables lrngth.

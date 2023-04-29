@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * cd_shell - change direc
+ * cd_shell - changes current directory
  *
- * @datash: data relev
- * Return: if success 1
+ * @datash: data relevant
+ * Return: 1 on success
  */
 int cd_shell(data_shell *datash)
 {

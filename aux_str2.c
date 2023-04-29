@@ -111,7 +111,7 @@ char *_strtok(char str[], const char *delim)
 /**
  * _isdigit - if string passed is a num
  *
- * @s: str input
+ * @s: str input 
  * Return: 1 if str num. 0 otherwise.
  */
 int _isdigit(const char *s)

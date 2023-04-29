@@ -1,5 +1,5 @@
-#ifndef  _MAIN_H_
-#define  _MAIN_H_
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <unistd.h>
@@ -196,12 +196,10 @@ char *aux_itoa(int n);
 int _atoi(char *s);
 
 /* aux_error1.c */
-char *concat_err_cd(data_shell *data, char *msg
-		, char *err_msg, char *line_count);
-char *error_msg_cd(data_shell *data);
-char *error_not_found(data_shell *data);
-char *error_exit_shell(data_shell *data);
-
+char *strcat_cd(data_shell *, char *, char *, char *);
+char *error_get_cd(data_shell *datash);
+char *error_not_found(data_shell *datash);
+char *error_exit_shell(data_shell *datash);
 
 /* aux_error2.c */
 char *error_get_alias(char **args);

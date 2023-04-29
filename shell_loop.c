@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * without_comment - remove comment from input
+ * without_comment - deletes comments from the input
  *
- * @in: input str
- * Return: remove comments from input
+ * @in: input string
+ * Return: input without comments
  */
 char *without_comment(char *in)
 {
@@ -36,10 +36,10 @@ char *without_comment(char *in)
 }
 
 /**
- * shell_loop - shell loop
- * @datash: data relev
+ * shell_loop - Loop of shell
+ * @datash: data relevant (av, input, args)
  *
- * Return: no void
+ * Return: no return.
  */
 void shell_loop(data_shell *datash)
 {
@@ -75,4 +75,3 @@ void shell_loop(data_shell *datash)
 		}
 	}
 }
-
