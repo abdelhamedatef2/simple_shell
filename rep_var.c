@@ -46,7 +46,7 @@ void check_env(r_var **h, char *in, data_shell *data)
  *
  * @h: limkedlist head
  * @in: input str
- * @st: shel stautes 
+ * @st: shel stautes
  * @data: data struct
  * Return: void
  */
