@@ -41,7 +41,8 @@ char *error_get_cd(data_shell *datash)
 	return (error);
 }
 /**
- * strcat_cd - Concatenates the error message to be printed in case of a cd error.
+ * strcat_cd - Concatenates the error
+ * message to be printed in case of a cd error.
  *
  * @datash: Relevant data (directory).
  * @msg: Message to be printed.
