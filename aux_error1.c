@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * error_get_cd - error message for cd command in get_cd
  * @datash: data relevant (directory)
