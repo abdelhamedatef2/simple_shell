@@ -1,8 +1,11 @@
 #include "main.h"
 /**
- * error_get_cd - error message for cd command in get_cd
- * @datash: data relevant (directory)
- * Return: Error message
+ * error_get_cd - Generates the error message to be printed in case of
+ * a failure in the cd command within get_cd.
+ *
+ * @datash: Relevant data (directory).
+ *
+ * Return: The error message.
  */
 char *error_get_cd(data_shell *datash)
 {
@@ -38,13 +41,14 @@ char *error_get_cd(data_shell *datash)
 	return (error);
 }
 /**
- * strcat_cd - function that concatenates the message for cd error
+ * strcat_cd - Concatenates the error message to be printed in case of a cd error.
  *
- * @datash: data relevant (directory)
- * @msg: message to print
- * @error: output message
- * @ver_str: counter lines
- * Return: error message
+ * @datash: Relevant data (directory).
+ * @msg: Message to be printed.
+ * @error: Output message.
+ * @ver_str: Counter lines.
+ *
+ * Return: The error message.
  */
 char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 {
@@ -75,10 +79,13 @@ char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 	return (error);
 }
 /**
- * error_not_found - generic error message for command not found
- * @datash: data relevant (counter, arguments)
- * Return: Error message
+ * error_not_found - Generates the generic error message
+ *  to be printed when a command is not found.
+ * @datash: Relevant data (counter, arguments).
+ *
+ * Return: The error message.
  */
+
 char *error_not_found(data_shell *datash)
 {
 	int length;
@@ -107,10 +114,11 @@ char *error_not_found(data_shell *datash)
 }
 
 /**
- * error_exit_shell - generic error message for exit in get_exit
- * @datash: data relevant (counter, arguments)
+ * error_exit_shell - Generates the generic error message to
+ * be printed in case of an error with the exit command within get_exit.
+ * @datash: Relevant data (counter, arguments).
  *
- * Return: Error message
+ * Return: The error message.
  */
 char *error_exit_shell(data_shell *datash)
 {
